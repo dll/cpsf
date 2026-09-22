@@ -1,0 +1,23 @@
+# 编译产物
+*.exe
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.out
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*~
+
+# 系统
+Thumbs.db
+.DS_Store
+
+# 临时文件
+*.tmp
+*.log
