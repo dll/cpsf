@@ -1,4 +1,4 @@
-# CPSF：从程序员到软件框架
+# CPSF：从程序员到架构师
 
 > **C**语言 **P**lugin **S**oftware **F**ramework —— C语言插件框架演进教程
 

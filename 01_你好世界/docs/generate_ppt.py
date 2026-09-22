@@ -211,7 +211,7 @@ def create_ppt():
 
     # 系列名称
     add_textbox(slide, Inches(1.5), Inches(5), Inches(10), Inches(0.6),
-                '从程序员到软件框架 —— C语言插件框架演进之旅', font_size=16,
+                '从程序员到架构师 —— C语言插件框架演进之旅', font_size=16,
                 color=COLORS['text_gray'])
 
     # 阶段标识
@@ -756,7 +756,7 @@ int main(void)
                 font_size=22, color=COLORS['secondary'], align=PP_ALIGN.CENTER)
 
     add_textbox(slide, Inches(2), Inches(5), Inches(9.3), Inches(0.6),
-                '从程序员到软件框架 · 第01讲',
+                '从程序员到架构师 · 第01讲',
                 font_size=14, color=COLORS['text_gray'], align=PP_ALIGN.CENTER)
 
     # 保存
