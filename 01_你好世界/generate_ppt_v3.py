@@ -86,7 +86,7 @@ def add_title_bar(slide, title, subtitle=None):
                  subtitle, font_size=16, color=COLORS['text_light'])
     
     add_text(slide, Inches(0.8), Inches(7.05), Inches(12), Inches(0.3),
-             "从程序员到架构师 · 第1讲：表达式（深度版）", font_size=11, color=COLORS['text_light'])
+             "第1讲 表达式", font_size=12, color=COLORS['text_light'])
 
 # ========== 第1页：封面 ==========
 slide = prs.slides.add_slide(prs.slide_layouts[6])
