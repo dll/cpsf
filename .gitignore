@@ -1,23 +1,12 @@
-# 编译产物
+# 临时文件和工作目录
+**/_work/
+__pycache__/
+*.pyc
 *.exe
 *.o
 *.obj
-*.a
-*.lib
-*.so
-*.dll
-*.out
-
-# 编辑器
-.vscode/
-.idea/
-*.swp
-*~
-
-# 系统
-Thumbs.db
-.DS_Store
-
-# 临时文件
 *.tmp
-*.log
+*TEMP_MPY*
+
+# 备份文件
+*_backup.*
