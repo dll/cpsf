@@ -27,5 +27,10 @@ _归档/
 .workbuddy/
 _check/
 .pipeline.*.lock
+
+# 构建/配音流水线产生的日志与一次性数据
 *.log
-vbx_*.json
+vbx*.json
+_*.json
+_proc.txt
+clone_log.txt
