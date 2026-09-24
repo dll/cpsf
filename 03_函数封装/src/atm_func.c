@@ -20,6 +20,7 @@
  */
 
 #include <stdio.h>
+#include "console_utf8.h"
 
 // ========== 全局变量 ==========
 //
@@ -54,6 +55,7 @@ void print_error(char* msg);  // 打印错误信息
 //
 int main()
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     int choice = 0;
     int running = 1;
 
@@ -68,7 +70,11 @@ int main()
 
         // 读取用户输入
         printf("请输入您的选择：");
-        scanf("%d", &choice);
+        /* 输入读完（或不是数字）就跳出循环，避免死循环 */
+        if (scanf("%d", &choice) != 1)
+        {
+            break;
+        }
         printf("\n");
 
         // 根据选择调用不同的函数

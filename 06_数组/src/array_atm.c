@@ -30,6 +30,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "console_utf8.h"
 
 /* ============================================================
  *  常量定义
@@ -111,6 +112,7 @@ const char* trans_type_name(int type);
  * ============================================================ */
 int main(void)
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     int choice = 0;
     int running = 1;
 
@@ -127,7 +129,11 @@ int main(void)
     {
         show_menu();
         printf("请输入您的选择：");
-        scanf("%d", &choice);
+        /* 输入读完（或不是数字）就跳出循环，避免死循环 */
+        if (scanf("%d", &choice) != 1)
+        {
+            break;
+        }
         printf("\n");
 
         switch (choice)

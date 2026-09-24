@@ -33,9 +33,11 @@
 
 #include <stdio.h>
 #include "framework.h"
+#include "console_utf8.h"
 
 int main(void)
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     /* ① 启动框架：管理器 + 菜单 + 注册插件 + init + start */
     if (framework_start() != 0) {
         printf("\n[main] 框架启动失败，程序退出\n");

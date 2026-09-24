@@ -17,6 +17,7 @@
 #include "transaction.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "console_utf8.h"
 
 /* 显示菜单 */
 static void show_menu(void)
@@ -40,6 +41,7 @@ static void show_menu(void)
 
 int main(void)
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     int choice;
 
     /* 初始化测试数据 */

@@ -27,6 +27,7 @@
 //       printf 的真正代码在标准库文件（libc.a / libc.so）里。
 //       这就是为什么我们需要「链接」这一步——后面会讲。
 #include <stdio.h>
+#include "console_utf8.h"
 
 // ========== 第2行：主函数 ==========
 //
@@ -41,6 +42,7 @@
 //   return 0 表示正常结束，非0表示出错了。
 int main()
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     // ========== 第3行：核心表达式 ==========
     //
     // printf("Hello, Plugin Framework!\n");

@@ -26,9 +26,11 @@
 
 #include "framework.h"
 #include "plugins.h"
+#include "console_utf8.h"
 
 int main(void)
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     /*
      * 登记"内置回退插件"。
      * 正常情况下，它们会被 plugins/ 目录里的同名 DLL 取代；

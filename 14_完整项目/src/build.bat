@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul 2>&1
 REM ============================================================
 REM  第14讲：完整项目与总结展望
 REM  build.bat —— Windows 一键构建（MinGW / TDM-GCC）
@@ -28,7 +29,7 @@ REM ---------- 第 1 步：共享账务核心 ----------
 echo [1/3] 编译共享账务核心 atmcore.dll ...
 gcc %CFLAGS% -shared -o atmcore.dll %CORE% -Wl,--out-implib,libatmcore.a -DATMCORE_BUILD
 if errorlevel 1 goto fail
-echo       OK  -> atmcore.dll + libatmcore.a
+echo       OK  -^> atmcore.dll + libatmcore.a
 echo.
 
 REM ---------- 第 2 步：插件 DLL ----------
@@ -39,7 +40,7 @@ for %%P in (%PLUGIN_NAMES%) do (
     gcc %CFLAGS% -shared -DPLUGIN_DLL -o plugins\%%P_plugin.dll plugins\%%P_plugin.c -I. -Iplugins -L. -latmcore
     if errorlevel 1 goto fail
 )
-echo       OK  -> 4 个插件 DLL
+echo       OK  -^> 4 个插件 DLL
 echo.
 
 REM ---------- 第 3 步：主程序 ----------
@@ -48,7 +49,7 @@ gcc %CFLAGS% -o atm_framework.exe main.c framework.c dynamic_loader.c ^
     plugins\deposit_plugin.c plugins\withdraw_plugin.c plugins\query_plugin.c plugins\transfer_plugin.c ^
     -I. -Iplugins -L. -latmcore
 if errorlevel 1 goto fail
-echo       OK  -> atm_framework.exe
+echo       OK  -^> atm_framework.exe
 echo.
 
 echo ============================================================

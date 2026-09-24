@@ -23,6 +23,7 @@
 #include "account.h"
 #include "transaction.h"
 #include <stdio.h>
+#include "console_utf8.h"
 
 /* ============================================================
  * 显示主菜单
@@ -51,6 +52,7 @@ static void show_menu(void)
  * ============================================================ */
 int main(void)
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     int choice;
     int id1, id2, id3;
 

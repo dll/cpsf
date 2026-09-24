@@ -36,6 +36,7 @@
 #include "menu.h"      /* 菜单模块：show_welcome, show_menu, read_choice */
 #include "account.h"   /* 账户模块：account_query, account_deposit, ... */
 #include "utils.h"      /* 工具模块：print_success, print_error */
+#include "console_utf8.h"
 
 /*
  * main —— 程序入口
@@ -50,6 +51,7 @@
  */
 int main(void)
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     int choice = 0;
     int running = 1;
 

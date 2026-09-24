@@ -1,3 +1,9 @@
+# Windows 控制台默认是 GBK(936)，而本文件是 UTF-8：
+# 先把代码页切到 65001，否则 make 打印的中文提示会显示成乱码。
+ifeq ($(OS),Windows_NT)
+$(shell cmd /c "chcp 65001 >nul 2>&1")
+endif
+
 # ============================================================
 # 第9讲：静态库 - 构建脚本
 # 将 account.c 和 transaction.c 编译打包成 libaccount.a

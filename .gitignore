@@ -8,8 +8,19 @@ __pycache__/
 *.tmp
 *TEMP_MPY*
 
+# Windows 保留名，删不掉（设备名），只能忽略
+nul
+
 # 备份文件
 *_backup.*
+
+# 各讲 src 下的构建产物属于教学材料，随源码一起入库
+# （.o 之类的中间产物仍然忽略）
+!*/src/*.exe
+!*/src/*.dll
+!*/src/*.a
+!*/src/plugins/*.dll
+!*/src/plugins/*.so
 
 # 本地归档与工作产物（不入库）
 _归档/

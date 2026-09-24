@@ -78,6 +78,8 @@
     #define PLUGIN_EXT      ".so"
 #endif
 
+#include "console_utf8.h"     /* 解决 Windows 控制台中文乱码（UTF-8） */
+
 #define MAX_PLUGIN_FILES 64        /* 最多扫描多少个插件文件 */
 #define MAX_PATH_LEN     512
 
@@ -244,6 +246,7 @@ static int scan_and_load(double amount)
  * ============================================================ */
 int main(void)
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     double amount = 500.0;
     int    loaded;
 

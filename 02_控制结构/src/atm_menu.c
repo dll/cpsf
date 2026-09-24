@@ -14,9 +14,11 @@
  */
 
 #include <stdio.h>
+#include "console_utf8.h"
 
 int main()
 {
+    console_utf8_init();   /* 解决中文乱码：切换到 UTF-8 控制台 */
     // ========== 变量定义 ==========
     //
     // 我们需要一些"容器"来存放数据
@@ -63,7 +65,11 @@ int main()
         printf("请输入您的选择：");
 
         // 读取用户输入
-        scanf("%d", &choice);
+        /* 输入读完（或不是数字）就跳出循环，避免死循环 */
+        if (scanf("%d", &choice) != 1)
+        {
+            break;
+        }
         printf("\n");
 
         // ========== 分支结构的演示 ==========

@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul 2>&1
 REM ============================================================
 REM 第10讲：动态库 - Windows 构建脚本
 REM 使用 MinGW gcc 编译 account.dll（含导入库 libaccount.dll.a）
