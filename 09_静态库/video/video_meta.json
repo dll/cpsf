@@ -1,0 +1,49 @@
+{
+  "fps": 12,
+  "cursor": [
+    [0.66, 0.38],
+    [0.50, 0.42],
+    [0.35, 0.32],
+    [0.50, 0.40],
+    [0.28, 0.30],
+    [0.30, 0.45],
+    [0.33, 0.57],
+    [0.35, 0.31],
+    [0.34, 0.42],
+    [0.50, 0.45],
+    [0.30, 0.45],
+    [0.30, 0.52],
+    [0.58, 0.48],
+    [0.40, 0.33],
+    [0.30, 0.35],
+    [0.40, 0.33],
+    [0.70, 0.35],
+    [0.50, 0.62]
+  ],
+  "click_at": [
+    0.60, 0.55, 0.55, 0.55, 0.58, 0.55, 0.55, 0.55, 0.55,
+    0.58, 0.55, 0.60, 0.55, 0.55, 0.55, 0.55, 0.55, 0.60
+  ],
+  "demo_segments": [12],
+  "demo_title": "运行演示：gcc 编译 .o + ar 打包 .a + 链接 + 运行 + 退出码",
+  "demo_terminal": [
+    "$ gcc -Wall -c account.c -o account.o",
+    "$ gcc -Wall -c transaction.c -o transaction.o",
+    "$ ar rcs libaccount.a account.o transaction.o",
+    "$ ar t libaccount.a",
+    "account.o",
+    "transaction.o",
+    "$ gcc -c main.c -o main.o",
+    "$ gcc -o atm_static main.o -L. -laccount",
+    "$ ./atm_static.exe",
+    "=== ATM静态库版初始化 ===",
+    "[开户] ID:1001  户名:张三  余额:1000.00",
+    "[开户] ID:1002  户名:李四  余额:2000.00",
+    "[转账] 1001 -> 1003  金额:300.00",
+    "$ echo $?   ->   0"
+  ],
+  "demo_shots": [
+    "09_静态库/src/account.c",
+    "09_静态库/src/main.c"
+  ]
+}
