@@ -298,7 +298,9 @@ def render_demo_segment(slide_png, chunks, duration, out_mp4, audio,
 
     n = max(2, int(round(duration * fps)))
     f_sub = font(FONT_B, 40)
-    f_term = font(FONT_C, 24)
+    # 终端行含中文（如"=== 初始化账务核心 ==="），Consolas 没有中文字形，
+    # 会渲染成一排豆腐块 —— 必须用中文字体（微软雅黑）。
+    f_term = font(FONT_R, 24)
     f_title = font(FONT_B, 24)
     f_shot = font(FONT_R, 15)      # 源码卡片含中文注释，必须用中文字体
 
